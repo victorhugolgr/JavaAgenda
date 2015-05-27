@@ -1,7 +1,6 @@
 package agenda.gui;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -35,7 +34,7 @@ public class AgendaFrame extends JFrame {
 	 */
 	public AgendaFrame() {
 	    setTitle("Agenda");
-	    setResizable(false);
+	    setResizable(true);
 	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    setBounds(100, 100, 450, 300);
 	    contentPane = new JPanel();
@@ -45,7 +44,7 @@ public class AgendaFrame extends JFrame {
 		
 	    JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 	    ListaEventosPanel listaEventosPanel = new ListaEventosPanel();
-	    tabbedPane.addTab("Cadastro de Eventos", new CadastroEventoPanel());
+	    tabbedPane.addTab("Cadastro de Eventos", new CadastroEventoPanel(listaEventosPanel));
 	    tabbedPane.addTab("Lista de Eventos", listaEventosPanel);
 	    
 	    contentPane.add(tabbedPane, BorderLayout.CENTER);
